@@ -1,0 +1,30 @@
+# 训练输出（模型权重、日志、检查点等）
+outputs/
+
+# Python 缓存
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# 虚拟环境
+venv/
+.env/
+.venv/
+env/
+
+# IDE 配置
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# 环境变量/密钥
+.env
+*.pem
+
+# Jupyter
+.ipynb_checkpoints/
+
+# macOS
+.DS_Store
