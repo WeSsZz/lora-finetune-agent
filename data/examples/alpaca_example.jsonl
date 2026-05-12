@@ -1,0 +1,5 @@
+{"instruction": "请将以下中文句子翻译成英文。", "input": "人工智能正在改变世界。", "output": "Artificial intelligence is changing the world."}
+{"instruction": "解释什么是机器学习。", "input": "", "output": "机器学习是人工智能的一个分支，它使计算机系统能够从数据中学习并改进性能，而无需进行明确的编程。通过算法和统计模型，机器学习系统可以分析数据模式，做出预测或决策。"}
+{"instruction": "总结以下段落的主要观点。", "input": "深度学习是机器学习的一种方法，它使用多层神经网络来模拟人脑的工作方式。这些网络可以自动从原始数据中提取特征，在图像识别、自然语言处理和语音识别等领域取得了突破性进展。", "output": "深度学习使用多层神经网络模拟人脑，能自动提取数据特征，在图像、语音和自然语言处理领域有重大突破。"}
+{"instruction": "列举三种常见的排序算法。", "input": "", "output": "三种常见的排序算法包括：\n1. 快速排序（Quick Sort）：采用分治策略，平均时间复杂度为O(n log n)\n2. 归并排序（Merge Sort）：稳定的分治排序算法，时间复杂度为O(n log n)\n3. 堆排序（Heap Sort）：利用堆数据结构，时间复杂度为O(n log n)"}
+{"instruction": "什么是RESTful API？", "input": "", "output": "RESTful API是一种基于REST（Representational State Transfer）架构风格设计的应用程序接口。它使用HTTP请求来访问和操作资源，通常以JSON格式交换数据。RESTful API具有无状态、可缓存、分层系统等特点，是目前Web服务最流行的设计方式之一。"}

@@ -1,0 +1,51 @@
+{
+  "model_name": "Qwen/Qwen2.5-3B-Instruct",
+  "lora_config": {
+    "r": 16,
+    "lora_alpha": 32,
+    "target_modules": ["q_proj", "k_proj", "v_proj", "o_proj", "gate_proj", "up_proj", "down_proj"],
+    "lora_dropout": 0.05,
+    "bias": "none",
+    "task_type": "CAUSAL_LM",
+    "use_rslora": false
+  },
+  "training_config": {
+    "output_dir": "./outputs/qwen2.5-3b-lora",
+    "num_train_epochs": 3,
+    "per_device_train_batch_size": 2,
+    "per_device_eval_batch_size": 2,
+    "gradient_accumulation_steps": 4,
+    "learning_rate": 2e-4,
+    "max_grad_norm": 0.3,
+    "warmup_ratio": 0.03,
+    "lr_scheduler_type": "cosine",
+    "logging_steps": 10,
+    "save_strategy": "epoch",
+    "evaluation_strategy": "epoch",
+    "load_best_model_at_end": true,
+    "metric_for_best_model": "eval_loss",
+    "bf16": false,
+    "fp16": true,
+    "optim": "paged_adamw_8bit",
+    "group_by_length": true,
+    "max_seq_length": 2048,
+    "packing": false,
+    "max_steps": -1,
+    "report_to": "none"
+  },
+  "quantization_config": {
+    "load_in_4bit": true,
+    "bnb_4bit_compute_dtype": "float16",
+    "bnb_4bit_use_double_quant": true,
+    "bnb_4bit_quant_type": "nf4"
+  },
+  "data_config": {
+    "train_file": "data/train.jsonl",
+    "eval_file": "data/eval.jsonl",
+    "text_column": "text",
+    "instruction_column": "instruction",
+    "input_column": "input",
+    "output_column": "output",
+    "format": "alpaca"
+  }
+}
