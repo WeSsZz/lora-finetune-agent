@@ -205,6 +205,12 @@ class LoRATrainer:
             training_args_dict = self.training_config.copy()
             training_args_dict["output_dir"] = self.output_dir
 
+            # Disable evaluation if no eval dataset provided
+            if eval_dataset is None:
+                training_args_dict["evaluation_strategy"] = "no"
+                training_args_dict["eval_strategy"] = "no"
+                training_args_dict["load_best_model_at_end"] = False
+
             # Remove keys not in TrainingArguments
             valid_keys = TrainingArguments.__dataclass_fields__.keys()
             filtered_args = {k: v for k, v in training_args_dict.items() if k in valid_keys}

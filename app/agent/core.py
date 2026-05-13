@@ -192,7 +192,7 @@ class LoRAFinetuneAgent:
                 "model_name": task.model_name,
                 "dataset_info": dataset_info,
             })
-            config = config_result.get("data", {}) if config_result.get("status") == "success" else {}
+            config = config_result.get("data", {}).get("config", {}) if config_result.get("status") == "success" else {}
             print(f"[{task_id}] 配置验证完成")
 
             # Step 3: Preprocess data
